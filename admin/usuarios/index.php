@@ -30,17 +30,17 @@
 							  //mostramos cada uno de los departamentos en las opciones            
 							  while($row = mysqli_fetch_array($resultado)) { 
 							  echo '
-							  <div class="media align-items-center">
+							  <div class="media align-items-center" >
 								<label class="custom-control custom-checkbox">
-								  <input type="checkbox" class="custom-control-input">
+								  <input onclick="testCheckbox(this);" type="checkbox" class="custom-control-input"  name="chk_user" id="chk_user" value="'.$row["correo"].'">
 								  <span class="custom-control-indicator"></span>
 								</label>
 
-								<a class="flexbox align-items-center flex-grow gap-items" href="#qv-user-details" data-toggle="quickview">
+								<a class="flexbox flex-grow gap-items text-truncate" href="#qv-user-details" data-toggle="quickview" id="lst">
 								  <img class="avatar" src="assets/img/avatar/default.jpg" alt="...">
 
 									<div class="media-body text-truncate">
-										<h6>'.utf8_encode($row["Nombre"]).'</h6>
+										<h6>'.$row["Nombre"].'</h6>
 										<small>
 										  <span>'.$row["correo"].'</span>
 										  <span class="divider-dash">'.$row["telefono"].'</span>
@@ -48,7 +48,7 @@
 									  </div>
 									</a>
 
-									<span class="lead text-fade mr-25 d-none d-md-block" title="Departamento" data-provide="tooltip">'.utf8_encode($row["nombre"]).'</span>
+									<span class="lead text-fade mr-25 d-none d-md-block" title="Departamento" data-provide="tooltip">'.$row["nombre"].'</span>
 
 										<div class="dropdown">
 										  <a class="text-lighter" href="#" data-toggle="dropdown"><i class="ti-more-alt rotate-90"></i></a>
@@ -71,7 +71,6 @@
           </div>
 
         </div>
-      </div>
    <!--/.main-content -->
 
 		 <!-- Footer -->
@@ -99,11 +98,9 @@
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script type="text/javascript" src="jquerymobile/jquery-1.4.3.min.js"></script>
-    <script type="text/javascript" src="jquerymobile/jquery.mobile-1.0a1.min.js"></script>
 
 	
-	<div id="qv-user-add" class="quickview quickview-md">
+	<div id="qv-user-add" class="quickview quickview-md backdrop-dark">
       <header class="quickview-header">
         <p class="quickview-title lead fw-400">Agregar nuevo Ususario</p>
         <span class="close text-primary" style="cursor: pointer;" id="btn_guardar"><i class="ti-save"></i></span>
@@ -152,7 +149,7 @@
                   $resultado = mysqli_query($con, $comando)or die(mysqli_error());
                   //mostramos cada uno de los departamentos en las opciones            
                   while($row = mysqli_fetch_array($resultado)) { 
-                      echo '<option value="'.$row["id_departamento"].'">'.utf8_encode($row["nombre"]).' </option>';
+                      echo '<option value="'.$row["id_departamento"].'">'.$row["nombre"].' </option>';
                   }
                 ?>
               </select>
@@ -172,9 +169,14 @@
           
         </footer>
     </div>
-    <!-- END Quickview - Add user -->
-	
-	 <!-- Quickview - User detail -->
+    
+
+    <div id="aqui">
+    <!-- END Quickview - Add user 
+	   <div id="qv-user-details" class="quickview quickview-lg" data-url="admin/usuarios/detalles.php?usuario=Abel"></div>-->
+  </div>
+
+	 <!-- Quickview - User detail 
     <div id="qv-user-details" class="quickview quickview-lg">
       <div class="quickview-body">
 
@@ -248,7 +250,7 @@
         <button class="btn btn-flat btn-primary" type="submit">Save changes</button>
       </footer>
     </div>
-
+       Quickview - User detail -->
      <script>
            $("#btn_guardar").click( function()
            {   
@@ -333,6 +335,32 @@
 
               }); 
            });
+      </script>
+
+      <script type="text/javascript">
+       function testCheckbox(oCheckbox)
+          {
+              var checkbox_val = oCheckbox.value;
+              if (oCheckbox.checked == true)
+              {
+                  
+                  //alert("Checkbox with name = " + oCheckbox.name + " and value =" +
+                  //        checkbox_val + " is checked");
+
+                  var daString='<div data-always-reload="true" id="qv-user-details" class="quickview quickview-lg" data-url="admin/usuarios/detalles.php?usuario='+checkbox_val+'">';
+                  //alert(daString);
+                  var daParent=document.getElementById("aqui");
+                  daParent.innerHTML=daString;
+                 document.getElementById('lst').click();
+              }
+              else
+              {
+                  //alert("Checkbox with name = " + oCheckbox.name + " and value =" +
+                    //    checkbox_val + " is not checked");
+              }
+          }
+
+
       </script>
 
     <!-- END Quickview - User detail -->

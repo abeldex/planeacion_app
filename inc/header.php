@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <base href="http://148.227.28.120/planeacion_app/">
+    <base href="http://localhost/planeacion_app/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="TheAdmin - Responsive admin and web application ui kit">
