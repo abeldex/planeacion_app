@@ -36,7 +36,7 @@
 								  <span class="custom-control-indicator"></span>
 								</label>
 
-								<a class="flexbox flex-grow gap-items text-truncate" href="#qv-user-details" data-toggle="quickview" id="lst">
+								<a class="flexbox flex-grow gap-items text-truncate" href="#qv-user-details" data-toggle="quickview" id="lst" >
 								  <img class="avatar" src="assets/img/avatar/default.jpg" alt="...">
 
 									<div class="media-body text-truncate">
@@ -102,7 +102,7 @@
 	
 	<div id="qv-user-add" class="quickview quickview-md backdrop-dark">
       <header class="quickview-header">
-        <p class="quickview-title lead fw-400">Agregar nuevo Ususario</p>
+        <p class="quickview-title lead fw-400">Agregar nuevo Usuario</p>
         <span class="close text-primary" style="cursor: pointer;" id="btn_guardar"><i class="ti-save"></i></span>
         <span class="close" ><i class="ti-close"></i></span>
       </header>

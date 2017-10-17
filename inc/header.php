@@ -1,18 +1,20 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
-    <base href="http://localhost/planeacion_app/">
+    <base href="http://148.227.28.120/planeacion_app/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="TheAdmin - Responsive admin and web application ui kit">
+    <meta name="description" content="Proyecto para la planeacion de la FACITE">
     <meta name="keywords" content="admin, dashboard, web app, sass, ui kit, ui framework, bootstrap">
 
     <title>Sistema de Planeacion | FACITE</title>
 
-    <!-- Styles -->
+   <!-- Styles -->
     <link href="assets/css/core.min.css" rel="stylesheet">
     <link href="assets/css/app.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="assets/img/uas.png">

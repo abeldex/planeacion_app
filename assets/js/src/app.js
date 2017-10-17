@@ -132,7 +132,7 @@
     primary:       "#33cabb",
     secondary:     "#e4eaec",
     success:       "#46be8a",
-    info:          "#48b0f7",
+    info:          "#800080",
     warning:       "#f2a654",
     danger:        "#f96868",
     bg:            "#f3f5f6",
@@ -551,8 +551,6 @@
       return escapeMap[match];
     }) : string;
   }
-
-
 
   window.app = app;
 }(jQuery, window);

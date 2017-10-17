@@ -7,4 +7,6 @@
 	//realizmos la conexion
 	$con = mysqli_connect($servidor, $usuario, $password, $database) or die("Error al conectar a la BD" . mysqli_error($con));
 
+	mysqli_set_charset($con, "utf8")
+
 ?>
